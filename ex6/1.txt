@@ -1,0 +1,1 @@
+LED\_RED is never toggled. Because both timer0\_counter and timer0\_flag have values initialized = 0 -> timer\_run function never sets timer0\_flag = 1

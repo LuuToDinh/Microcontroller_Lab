@@ -1,0 +1,1 @@
+Because setTimer0 = 10 -> the duration of initialized status is 100ms, its enough for we can see init status before toggled

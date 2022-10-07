@@ -1,0 +1,1 @@
+LED\_RED is toggle immediately at the first time. Because when setTimer0(1) goes to If instruction ->  timer0\_counter will = 0 after instruction: "timer0\_counter--;" -> timer0\_flag will = 1 after that.
