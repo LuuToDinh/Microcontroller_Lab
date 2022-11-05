@@ -94,7 +94,7 @@ void getKeyInput3(){
   KeyReg9 = KeyReg8;
   KeyReg8 = HAL_GPIO_ReadPin(Button3_GPIO_Port, Button3_Pin);
   if ((KeyReg9 == KeyReg8) && (KeyReg9 == KeyReg10)){
-    if (KeyReg10 != KeyReg7){
+    if (KeyReg10 != KeyReg11){
       KeyReg11 = KeyReg10;
 
       if (KeyReg11 == PRESSED_STATE){

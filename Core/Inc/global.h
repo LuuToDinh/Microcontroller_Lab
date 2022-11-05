@@ -10,6 +10,7 @@
 
 #include "timer_software.h"
 #include "button.h"
+#include "displayled7seg.h"
 
 //extern int statusMain;
 extern int statusX;
