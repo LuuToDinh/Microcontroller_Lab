@@ -108,11 +108,11 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  SCH_Add_Task(ledredtest, 0, 50);
-  SCH_Add_Task(ledyellowtest, 0, 100);
-  SCH_Add_Task(ledgreentest, 0, 150);
-  SCH_Add_Task(ledbluetest, 0, 200);
-  SCH_Add_Task(ledpinktest, 0, 250);
+  SCH_Add_Task(ledredtest, 100, 50);
+  SCH_Add_Task(ledyellowtest, 100, 100);
+  SCH_Add_Task(ledgreentest, 100, 150);
+  SCH_Add_Task(ledbluetest, 100, 200);
+  SCH_Add_Task(ledpinktest, 100, 0);
   while (1)
   {
     /* USER CODE END WHILE */

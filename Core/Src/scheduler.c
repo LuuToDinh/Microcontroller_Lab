@@ -123,7 +123,7 @@ void SCH_Update(void){
 		if(SCH_tasks_G[i].State == ACTIVE){
 			if (SCH_tasks_G[i].Delay > 0)
 			{
-//				display7SEG(SCH_tasks_G[i].Delay / 10);
+//				display7SEG(SCH_tasks_G[4].Delay / 10);
 				SCH_tasks_G[i].Delay--;
 			}
 			else
@@ -133,7 +133,7 @@ void SCH_Update(void){
 			}
 			if (SCH_tasks_G[i].Delay > 0 && printTime == 50)
 			{
-				display7SEG(SCH_tasks_G[i].Delay / 10);
+				display7SEG(SCH_tasks_G[4].Delay / 100);
 				printTime = 0;
 			}
 		}
@@ -146,12 +146,17 @@ void SCH_Dispatch_Tasks(void){
 		if(SCH_tasks_G[i].State == ACTIVE && SCH_tasks_G[i].RunMe > 0){
 			SCH_tasks_G[i].RunMe--;
 			(*SCH_tasks_G[i].pTask)();
+			if( SCH_tasks_G [i] . Period == 0 )
+			 {
+				SCH_Delete_Task(i) ;
+			 }
 		}
 	}
 }
 
 void SCH_Delete_Task(uint32_t taskID) {
-	if(SCH_tasks_G[taskID].State = ACTIVE && taskID < SCH_MAX_TASKS){
+	if(SCH_tasks_G[taskID].State == ACTIVE && taskID < SCH_MAX_TASKS){
+		SCH_tasks_G[taskID].pTask = 0x0000;
 		SCH_tasks_G[taskID].Delay = 0;
 		SCH_tasks_G[taskID].Period =  0;
 		SCH_tasks_G[taskID].RunMe = 0;
